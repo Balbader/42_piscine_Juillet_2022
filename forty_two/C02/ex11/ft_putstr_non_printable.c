@@ -1,5 +1,4 @@
 #include <unistd.h>
-#include <stdio.h>
 
 typedef int		t_bool;
 #define TRUE 1
