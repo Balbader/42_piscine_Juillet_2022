@@ -16,13 +16,12 @@ void ft_putchar(char c)
 
 void ft_print_alphabet(void)
 {
-    char    str[27] = "abcdefghijklmnopqrstuvwxyz";
     int     i;
 
-    i = 0;
-    while (str[i])
+    i = 'a';
+    while (i <= 'z')
     {
-        ft_putchar(str[i]);
+        ft_putchar(i);
         i++;
     }
 }
