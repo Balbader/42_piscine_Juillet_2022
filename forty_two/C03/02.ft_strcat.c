@@ -5,8 +5,8 @@ int		ft_strlen(char *str);
 
 int main(void)
 {
-	char	str1[101] = "Hello ";
-	char	str2[101] = "World";
+	char	str1[101] = " World";
+	char	str2[101] = "Hello";
 	printf("%s\n", ft_strcat(str2, str1));
 	return (0);
 }
@@ -16,15 +16,16 @@ char	*ft_strcat(char *dest, char *src)
 	int		i;
 	int		j;
 	
-	i = ft_strlen(src);
+	i = ft_strlen(dest);
 	j = 0;
 	while (dest[j])
 	{
-		src[i] = dest[j];
+		dest[i] = src[j];
 		j++;
 		i++;
 	}
-	return (src);
+	dest[j] = '\0';
+	return (dest);
 }
 
 int		ft_strlen(char *str)
