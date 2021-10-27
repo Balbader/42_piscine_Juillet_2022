@@ -16,13 +16,12 @@ void ft_putchar(char c)
 
 void ft_print_numbers(void)
 {
-    char    nbr[10] = "123456789";
     int     i;
 
-    i = 0;
-    while (nbr[i])
+    i = '1';
+    while (i <= '9')
     {
-        ft_putchar(nbr[i]);
+        ft_putchar(i);
         i++;
     }
 }
