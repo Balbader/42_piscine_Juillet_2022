@@ -1,6 +1,41 @@
 #include <unistd.h>
 #include <stdio.h>
 
+int		tab_is_last(int n, int *tab);
+void	display_tab(int n, int *tab);
+int		tab_is_valid(int n, int *tab);
+void	ft_print_combn(int n);
+
+int main(void)
+{
+	ft_print_combn(1);
+	printf("\n");
+	printf("\n");
+	ft_print_combn(2);
+	printf("\n");
+	printf("\n");
+	ft_print_combn(3);
+	printf("\n");
+	printf("\n");
+	ft_print_combn(4);
+	printf("\n");
+	printf("\n");
+	ft_print_combn(5);
+	printf("\n");
+	printf("\n");
+	ft_print_combn(6);
+	printf("\n");
+	printf("\n");
+	ft_print_combn(7);
+	printf("\n");
+	printf("\n");
+	ft_print_combn(8);
+	printf("\n");
+	printf("\n");
+	ft_print_combn(9);
+	return (0);
+}
+
 int		tab_is_last(int n, int *tab)
 {
 	int i;
@@ -77,32 +112,3 @@ void	ft_print_combn(int n)
 	display_tab(n, tab);
 }
 
-int main(void)
-{
-	ft_print_combn(1);
-	printf("\n");
-	printf("\n");
-	ft_print_combn(2);
-	printf("\n");
-	printf("\n");
-	ft_print_combn(3);
-	printf("\n");
-	printf("\n");
-	ft_print_combn(4);
-	printf("\n");
-	printf("\n");
-	ft_print_combn(5);
-	printf("\n");
-	printf("\n");
-	ft_print_combn(6);
-	printf("\n");
-	printf("\n");
-	ft_print_combn(7);
-	printf("\n");
-	printf("\n");
-	ft_print_combn(8);
-	printf("\n");
-	printf("\n");
-	ft_print_combn(9);
-	return (0);
-}
