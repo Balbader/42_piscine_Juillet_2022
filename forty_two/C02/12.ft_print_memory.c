@@ -1,5 +1,4 @@
 #include <unistd.h>
-#include <string.h>
 
 void	*ft_print_memory(void *addr, unsigned int size);
 void	ft_print_base(unsigned char c);
@@ -21,7 +20,7 @@ void	ft_putchar(char c)
 void	ft_print_base(unsigned char c)
 {
 	char	*base;
-	
+
 	base	= "123456789abcdef";
 	ft_putchar(base[c / 16]);
 	ft_putchar(base[c % 16]);
