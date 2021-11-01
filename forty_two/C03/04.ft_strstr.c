@@ -4,6 +4,10 @@ char	*ft_strstr(char *str, char *to_find);
 
 int main(void)
 {
+	char	str[101] = "Hello World!";
+	char	needle[101] = "llo";
+
+	printf("%s\n", ft_strstr(str, needle));
 
 	return (0);
 }
