@@ -10,7 +10,7 @@ int main(void)
 	char	needle[101] = "Hello";
 
 	printf("%s\n", ft_strstr(str, needle));
-	/*printf("%s\n", strstr(str, needle));*/
+	printf("%s\n", strstr(str, needle));
 
 	return (0);
 }
@@ -44,7 +44,7 @@ char	*ft_strstr(char *str, char *to_find)
 		i++;
 	}
 	temp[j] = '\0';
-	printf("temp: %s\n", temp);
+	/*printf("temp: %s\n", temp);*/
 	return (to_find);
 }
 
