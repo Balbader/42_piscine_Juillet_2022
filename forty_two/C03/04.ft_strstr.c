@@ -17,12 +17,6 @@ int main(void)
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	/*
-	   If needle is an empty string, haystack is returned; if needle occurs nowhere in
-	   haystack, NULL is returned; otherwise a pointer to the first character of the first
-	   occurrence of needle is returned.
-	   */
-
 	char	temp[101];
 	int		len;
 	int		i;
@@ -44,7 +38,6 @@ char	*ft_strstr(char *str, char *to_find)
 		i++;
 	}
 	temp[j] = '\0';
-	/*printf("temp: %s\n", temp);*/
 	return (to_find);
 }
 
@@ -52,7 +45,11 @@ char	*ft_strstr(char *str, char *to_find)
 int		ft_strlen(char *str)
 {
 	int		i;
+	int		j;
+	int		k;
 
+	j = 0;
+	k = 0;
 	i = 0;
 	while (str[i])
 		i++;
