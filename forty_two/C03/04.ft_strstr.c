@@ -10,7 +10,10 @@ int main(void)
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	if (to_find == " ")
-		return (str);
+	/*
+	 If needle is an empty string, haystack is returned; if needle occurs nowhere in
+     haystack, NULL is returned; otherwise a pointer to the first character of the first
+     occurrence of needle is returned.
+	*/
 	return (to_find);
 }
