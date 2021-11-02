@@ -41,7 +41,6 @@ char	*ft_strstr(char *str, char *to_find)
 	return (to_find);
 }
 
-
 int		ft_strlen(char *str)
 {
 	int		i;
