@@ -2,6 +2,7 @@
 #include <string.h>
 
 char	*ft_strstr(char *str, char *to_find);
+char	*ft_strcpy(char *dest, char *src);
 int		ft_strlen(char *str);
 
 int main(void)
@@ -17,28 +18,23 @@ int main(void)
 
 char	*ft_strstr(char *str, char *to_find)
 {
-	char	temp[101];
-	int		len;
-	int		i;
-	int		j;
-
 	if (*to_find == '\0')
 		return(str);
-	len = ft_strlen(to_find);
+	return (to_find);
+}
+
+char	*ft_strcpy(char *dest, char *src)
+{
+	int		i;
+
 	i = 0;
-	while (str[i])
+	while (src[i])
 	{
-		j = 0;
-		while (to_find[j])
-		{
-			if (to_find[j] == str[i])
-				temp[j] = to_find[j];
-			j++;
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	temp[j] = '\0';
-	return (to_find);
+	dest[i] = '\0';
+	return (dest);
 }
 
 int		ft_strlen(char *str)
