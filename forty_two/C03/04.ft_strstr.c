@@ -10,7 +10,7 @@ int main(void)
 	char	needle[101] = "Hello";
 
 	printf("%s\n", ft_strstr(str, needle));
-	printf("%s\n", strstr(str, needle));
+	/*printf("%s\n", strstr(str, needle));*/
 
 	return (0);
 }
