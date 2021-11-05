@@ -8,7 +8,7 @@ int		ft_strlen(char *str);
 int main(void)
 {
 	char	str[101] = "World Hello Hello world Hello";
-	char	needle[101] = "Hello";
+	char	needle[101] = "mimi";
 
 	printf("%s\n", ft_strstr(str, needle));
 	printf("%s\n", strstr(str, needle));
@@ -37,6 +37,8 @@ char	*ft_strstr(char *str, char *to_find)
 		}
 		i++;
 	}
+	if (count == 0)
+		return (NULL);
 	return (to_find);
 }
 
