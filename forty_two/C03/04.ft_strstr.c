@@ -18,8 +18,25 @@ int main(void)
 
 char	*ft_strstr(char *str, char *to_find)
 {
+	int		i;
+	int		j;
+	int		count;
+
+	count = 0;
+	i = 0;
 	if (*to_find == '\0')
 		return(str);
+	while (str[i])
+	{
+		j = 0;
+		while (to_find[j])
+		{
+			if (to_find[j] == str[i])
+				count++;
+			j++;
+		}
+		i++;
+	}
 	return (to_find);
 }
 
