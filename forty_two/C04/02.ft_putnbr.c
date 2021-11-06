@@ -3,7 +3,7 @@
 void	ft_putnbr(int nb);
 void	ft_putchar(char c);
 
-int main(void)
+int	main(void)
 {
 	return (0);
 }
@@ -15,7 +15,6 @@ void	ft_putnbr(int nb)
 		ft_putchar('-');
 		nb = -nb;
 	}
-	
 }
 
 void	ft_putchar(char c)
