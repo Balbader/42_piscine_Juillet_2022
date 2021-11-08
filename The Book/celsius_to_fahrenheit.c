@@ -1,10 +1,10 @@
 #include <stdio.h>
 
+/* print Fahrenheit-Celsius table 
+ * for fahr = 0, 20, ... 300 */
+
 int	main(void)
 {
-	/* print Fahrenheit-Celsius table 
-	 * for fahr = 0, 20, ... 300 */
-
 	int		fahr;
 	int		celsius;
 	int		lower;
@@ -14,9 +14,9 @@ int	main(void)
 	lower = 0;
 	upper = 300;
 	step = 20;
-
 	fahr = lower;
-	while (fahr <= upper) {
+	while (fahr <= upper)
+	{
 		celsius = 5 * (fahr - 32) / 9;
 		printf("%d\t%d\n", fahr, celsius);
 		fahr += step;
