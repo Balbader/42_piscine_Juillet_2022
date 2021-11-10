@@ -4,10 +4,11 @@
 
 int	main(void)
 {
-	char	str[101] = "Hello World		how		are you today\n";
+	char	*str;
 	int		count;
 	int		i;
 
+	str = "Hello World		how		are you today\n";
 	count = 0;
 	i = 0;
 	while (str[i] != '\0')
