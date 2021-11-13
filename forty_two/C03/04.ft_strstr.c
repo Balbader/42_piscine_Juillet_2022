@@ -6,7 +6,7 @@ char	*ft_strstr(char *str, char *to_find);
 int main(void)
 {
 	char	str[101] = "World Hello Hello world Hello";
-	char	needle[101] = "llo";
+	char	needle[101] = "ld";
 
 	printf("ft_strstr: %s\n", ft_strstr(str, needle));
 	printf("strstr: %s\n", strstr(str, needle));
