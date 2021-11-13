@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 unsigned int	ft_strlen(char *str);
 unsigned int	ft_strlcpy(char *dest, char *src, size_t dstsize);
@@ -6,12 +7,15 @@ unsigned int	ft_strlcpy(char *dest, char *src, size_t dstsize);
 int main(void)
 {
 	char str1[1000] = "Hello World";
-	char str2[1000];
+	char str2[1000] = "Hello";
 	int	 res;
+	int	 res2;
 
 	res = 0;
-	res = ft_strlcpy(str2, str1, 123);
-	printf("%d\n", res);
+	res = ft_strlcpy(str2, str1, 3);
+	res2 = strlcpy(str2, str1, 3);
+	printf("res: %d\n", res);
+	printf("res2: %d\n", res2);
 	return (0);
 }
 
@@ -30,7 +34,6 @@ unsigned int ft_strlcpy(char *dst, char *src, size_t dstsize)
 		dst[i] = '\0';
 		if (ft_strlen(src) < i)
 			return (i);
-		return (i);
 	}
 	return (ft_strlen(src));
 }
