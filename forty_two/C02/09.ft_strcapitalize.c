@@ -1,8 +1,6 @@
 #include <stdio.h>
 
 char	*ft_strcapitalize(char *str);
-void	check_lower(char *str);
-void	check_upper(char *str);
 
 int main(void)
 {
