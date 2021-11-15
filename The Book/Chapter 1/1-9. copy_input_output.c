@@ -6,16 +6,15 @@ int	main(void)
 	int	last;
 
 	last = 'a';
-	while ((c = getchar()) != EOF)
+	while (c != EOF)
 	{
+		c = getchar();
 		if (c != ' ')
 			putchar(c);
 		if (c == ' ')
-		{
 			if (last != ' ')
 				putchar(c);
-			last = c;
-		}
+		last = c;
 	}
 	return (0);
 }
