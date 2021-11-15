@@ -5,19 +5,26 @@
 int	main(void)
 {
 	char	*str;
-	int		count;
+	int		spaces;
+	int		tabs;
+	int		new_lines;
 	int		i;
 
-	str = "Hello World		how		are you today\n";
-	count = 0;
+	str = "Hello World how	are		you today\n";
+	spaces = 0;
+	tabs = 0;
+	new_lines = 0;
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] == '\t' || str[i] == ' ' || str[i] == '\n')
-			++count;
-		++i;
+		if (str[i] == '\t')
+			tabs++;
+		if (str[i] == ' ')
+			spaces++;
+		if (str[i] == '\n')
+			new_lines++;
+		i++;
 	}
-	str[i] = '\0';
-	printf("%d\n", count);
+	printf("tabs: %d\nnew_lines: %d\nspaces: %d\n", tabs, new_lines, spaces);
 	return (0);
 }
