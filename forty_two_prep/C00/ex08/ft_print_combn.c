@@ -13,7 +13,7 @@ void    ft_print_seperators(void)
 
 void    ft_print_combn(int n)
 {
-
+    /* work in progress */
 }
 
 int     main(void)
