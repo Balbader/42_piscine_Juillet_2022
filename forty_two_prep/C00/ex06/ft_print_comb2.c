@@ -1,8 +1,12 @@
 #include <unistd.h>
 
-void ft_putchar(char c) { write(1, &c, 1); }
+void    ft_putchar(char c)
+{
+  write(1, &c, 1);
+}
 
-void ft_print_numbers(int a, int b) {
+void    ft_print_numbers(int a, int b)
+{
   ft_putchar(a / 10 + '0');
   ft_putchar(a % 10 + '0');
   ft_putchar(' ');
@@ -10,7 +14,8 @@ void ft_print_numbers(int a, int b) {
   ft_putchar(b % 10 + '0');
 }
 
-void ft_print_comb2(void) {
+void ft_print_comb2(void)
+{
   int a;
   int b;
 
