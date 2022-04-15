@@ -3,10 +3,7 @@
 
 void    ft_ft(int *nbr)
 {
-    int     forty_two;
-
-    forty_two = 42;
-    *nbr = forty_two;
+    *nbr = 42;
 }
 
 int     main(void)
