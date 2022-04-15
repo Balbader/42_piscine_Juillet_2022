@@ -1,21 +1,21 @@
 #include <unistd.h> 
+#include <stdio.h>
 
-void    ft_putchar(char c)
+void    ft_ft(int *nbr)
 {
-    write(1, &c, 1);
-}
+    int     forty_two;
 
-void    ft_ft(int *ptr)
-{
-    *ptr = 42;
-    ft_putchar(*ptr);
+    forty_two = 42;
+    *nbr = forty_two;
 }
 
 int     main(void)
 {
-    int     nb;
-    
-    nb = 22;
-    ft_ft(nb);
+    int     ptr;
+
+    ptr = 88;
+    printf("before: %d\n", ptr);
+    ft_ft(&ptr);
+    printf("after: %d\n", ptr);
     return (0);
 }
