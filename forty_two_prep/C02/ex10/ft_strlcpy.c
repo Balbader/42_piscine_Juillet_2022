@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <bsd/string.h>
 
-unsigned int    ft_strlcpy(char *dest, char *src, unsigned int size)
-{
-
-}
+//unsigned int    ft_strlcpy(char *dest, char *src, unsigned int size)
 
 void test(int size)
 {
