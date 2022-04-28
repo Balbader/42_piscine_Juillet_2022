@@ -69,13 +69,3 @@ void	*ft_print_memory(void *addr, unsigned int size)
 	}
 	return (addr);
 }
-
-int     main(void)
-{
-    char    str[] = "Bonjour les amin";
-    char    str2[] = "ches...c est fo";
-
-    ft_print_memory(str, 16);
-    ft_print_memory(str2, 16);
-    return (0);
-}
