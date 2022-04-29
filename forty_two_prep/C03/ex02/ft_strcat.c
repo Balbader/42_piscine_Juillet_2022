@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <string.h>
-
 int     ft_strlen(char *str)
 {
     unsigned long     i;
@@ -22,19 +19,7 @@ char    *ft_strcat(char *dest, char *src)
     {
         dest[j] = src[i];
         i++;
-        j++;
     }
     dest[j] = '\0';
     return (dest);
-}
-
-int     main(void)
-{
-    char    a[] = " My Name is Balou!";
-    char    b[256] = "Hello World,";
-
-    printf("%lu\n", strlen(b));
-    printf("%s\n", strcat(b, a));
-    printf("%s\n", ft_strcat(b, a));
-    return (0);
 }
