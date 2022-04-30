@@ -24,19 +24,13 @@ char    *ft_strstr(char *str, char *to_find)
     j = 0;
     while (str[i])
     {
-        if (str[i] != to_find[i])
-            i++;
-        else if (str[i] == to_find[i])
+        if (str[i] == to_find[i])
         {
-            while (str[i])
-            {
-                temp[j] = str[i];
-                i++;
-                j++;
-            }
+            temp[j] = str[i];
+            j++;
         }
-        i++;
     }
+    i++;
     ft_strcpy(temp, str);
     return (str);
 }
@@ -48,6 +42,6 @@ int     main(void)
     char    *res;
 
     res = ft_strstr(a, b);
-    printf("%s\n", res);
+    printf("%s", res);
     return (0);
 }
