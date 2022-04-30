@@ -24,7 +24,7 @@ char    *ft_strstr(char *str, char *to_find)
     j = 0;
     while (str[i])
     {
-        if (str[i] == to_find[i])
+        if (str[i] == to_find[0])
         {
             temp[j] = str[i];
             j++;
