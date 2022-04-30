@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <string.h>
-
 char    *ft_strstr(char *str, char *to_find)
 {
     unsigned int i;
@@ -18,16 +15,5 @@ char    *ft_strstr(char *str, char *to_find)
         }
         i++;
     }
-    return (0);
-}
-
-int     main(void)
-{
-    char    a[] = "Hello My name is Balou";
-    char    b[256] = "y";
-    char    *res;
-
-    res = ft_strstr(a, b);
-    printf("%s", res);
     return (0);
 }
