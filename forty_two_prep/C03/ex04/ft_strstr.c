@@ -26,12 +26,16 @@ char    *ft_strstr(char *str, char *to_find)
     {
         if (str[i] == to_find[j])
         {
-            while ()
-            temp[j] = str[i];
-            j++;
+            while (str[j])
+            {
+                temp[j] = str[j];
+                j++;
+            }
+            break ;
         }
-    i++;
+        i++;
     }
+    printf("temp: %s\n", temp);
     ft_strcpy(temp, str);
     return (str);
 }
