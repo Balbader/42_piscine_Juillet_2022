@@ -32,7 +32,6 @@ char    *ft_strstr(char *str, char *to_find)
         }
     i++;
     }
-    int     hello;
     ft_strcpy(temp, str);
     return (str);
 }
