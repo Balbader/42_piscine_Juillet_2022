@@ -24,13 +24,15 @@ char    *ft_strstr(char *str, char *to_find)
     j = 0;
     while (str[i])
     {
-        if (str[i] == to_find[0])
+        if (str[i] == to_find[j])
         {
+            while ()
             temp[j] = str[i];
             j++;
         }
     i++;
     }
+    int     hello;
     ft_strcpy(temp, str);
     return (str);
 }
