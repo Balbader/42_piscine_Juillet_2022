@@ -3,7 +3,22 @@
 
 char    *ft_strstr(char *str, char *to_find)
 {
-    char    *pos = to_find;
+    unsigned int    i;
+    unsigned int    j;
+    char            temp[256];
+
+    i = 0;
+    while (str[i])
+    {
+        j = 0;
+        while (to_find[j])
+        {
+            if (str[i + j] == to_find[j])
+                temp[j] = str[i];
+            j++;
+        }
+        i++;
+    }
     return (0);
 }
 
@@ -13,11 +28,7 @@ int     main(void)
     char    b[256] = "a";
     char    *res;
 
-    //printf("%s\n", ft_strstr(a, b));
-    res = strstr(a, b);
-    if (res == NULL)
-        printf("NULL");
-    else
-        printf("%s\n", res);
+    res = ft_strstr(a, b);
+    printf("%s\n", res);
     return (0);
 }
