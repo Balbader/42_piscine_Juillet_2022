@@ -29,8 +29,8 @@ char    *ft_strstr(char *str, char *to_find)
             temp[j] = str[i];
             j++;
         }
-    }
     i++;
+    }
     ft_strcpy(temp, str);
     return (str);
 }
