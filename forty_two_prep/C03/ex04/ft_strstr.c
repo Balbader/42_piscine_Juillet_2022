@@ -3,23 +3,21 @@
 
 char    *ft_strstr(char *str, char *to_find)
 {
-    int     i;
-
-    i = 0;
-    while(str[i])
-    {
-        if (str[i] == to_find[i])
-            return (str);
-        i++;
-    }
-    return (str);
+    char    *pos = to_find;
+    return (0);
 }
 
 int     main(void)
 {
     char    a[] = "Hello My name is Balou";
-    char    b[256] = "B";
+    char    b[256] = "a";
+    char    *res;
 
-    printf("%s\n", ft_strstr(a, b));
+    //printf("%s\n", ft_strstr(a, b));
+    res = strstr(a, b);
+    if (res == NULL)
+        printf("NULL");
+    else
+        printf("%s\n", res);
     return (0);
 }
