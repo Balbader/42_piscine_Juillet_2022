@@ -8,14 +8,19 @@ char    *ft_strstr(char *str, char *to_find)
     char            temp[256];
 
     i = 0;
+    j = 0;
     while (str[i])
     {
-        j = 0;
-        while (to_find[j])
+        if (str[i] != to_find[i])
+            i++;
+        else if (str[i] == to_find[i])
         {
-            if (str[i + j] == to_find[j])
+            while (str[i])
+            {
                 temp[j] = str[i];
-            j++;
+                i++;
+                j++;
+            }
         }
         i++;
     }
