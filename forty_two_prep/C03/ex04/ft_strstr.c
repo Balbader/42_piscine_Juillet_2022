@@ -1,6 +1,19 @@
 #include <stdio.h>
 #include <string.h>
 
+char    *ft_strcpy(char *src, char *dest)
+{
+    unsigned int    i;
+
+    i = 0;
+    while (src[i])
+    {
+        dest[i] = src[i];
+        i++;
+    }
+    return (dest);
+}
+
 char    *ft_strstr(char *str, char *to_find)
 {
     unsigned int    i;
@@ -24,7 +37,8 @@ char    *ft_strstr(char *str, char *to_find)
         }
         i++;
     }
-    return (0);
+    ft_strcpy(temp, str);
+    return (str);
 }
 
 int     main(void)
