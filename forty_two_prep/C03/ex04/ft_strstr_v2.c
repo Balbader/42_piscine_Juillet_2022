@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 unsigned int     ft_strlen(char *str)
 {
     unsigned int     i;
@@ -29,13 +27,5 @@ char    *ft_strstr(char *str, char *to_find)
             j = 0;
         i++;
     }
-    return (0);
-}
-
-int     main(void)
-{
-    char    a[] = "Hello my name is balou";
-    char    b[] = "y";
-    printf("%s\n", ft_strstr(a, b));
     return (0);
 }
