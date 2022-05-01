@@ -10,38 +10,32 @@ unsigned int     ft_strlen(char *str)
     return (i);
 }
 
-char    *find(char *str, char *needle)
+char    *ft_strstr(char *str, char *to_find)
 {
-    unsigned int    str_index;
-    unsigned int    needle_index;
-    char            letter;
-    char            needle_letter;
+    unsigned int    i;
+    unsigned int    j;
 
-    str_index = 0;
-    needle_index = 0;
-    while (str_index < ft_strlen(str))
+    i = 0;
+    j = 0;
+    while (i < ft_strlen(str))
     {
-        letter = str[str_index];
-        needle_letter = needle[needle_index];
-        if (letter == needle_letter)
+        if (str[i] == to_find[j])
         {
-            needle_index++;
-            if (needle_index == ft_strlen(needle))
-                return (&str[str_index - ft_strlen(needle) + 1]);
+            j++;
+            if (j == ft_strlen(to_find))
+                return (&str[i - ft_strlen(to_find) + 1]);
         }
         else
-            needle_index = 0;
-        str_index++;
+            j = 0;
+        i++;
     }
     return (0);
 }
 
-
 int     main(void)
 {
-    char a[] = "abcdefgh";
-    char b[] = "cd";
-
-    printf("%s\n", find(a, b));
+    char    a[] = "Hello my name is balou";
+    char    b[] = "y";
+    printf("%s\n", ft_strstr(a, b));
     return (0);
 }
