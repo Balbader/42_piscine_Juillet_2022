@@ -6,7 +6,6 @@ int main(void)
     int *ptr;
 
     ptr = arr;
-    /*
     for(int i = 0; i < 5; i++)
         printf("arr[%d]: %d\n", i, arr[i]);
 
@@ -25,7 +24,6 @@ int main(void)
     printf("address of arr:     %p\n", arr + 1);
     printf("address of &arr[0]: %p\n", &arr[0] + 1);
     printf("\n");
-    */
     printf("++*ptr:   %d\n", ++*ptr);
     printf("*++ptr:   %d\n", *++ptr);
     printf("*ptr++:   %d\n", *ptr++);
