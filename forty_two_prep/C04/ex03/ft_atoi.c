@@ -44,15 +44,13 @@ int     ft_atoi(char *str)
 
     res = 0;
     i = 0;
+    if (!(str[i] >= '0' && str[i] <= '9'))
+        return (0);
     while (str[i])
     {
         j = i + 1;
         if ((ft_check_if_nbr(str[i])) && (ft_check_if_nbr(str[j])))
-        {
-            if (!ft_check_if_nbr(str[j]))
-                i++;
             res = res * 10 + str[i] - '0';
-        }
         i++;
     }
     return (res);
