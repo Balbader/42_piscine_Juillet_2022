@@ -2,7 +2,6 @@
 
 void    ft_putnbr(int nbr, char *base)
 {
-
 }
 
 int     main(void)
