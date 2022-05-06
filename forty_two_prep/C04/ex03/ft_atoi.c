@@ -25,9 +25,7 @@ int     ft_count_operators(char *str)
     i = 0;
     while (str[i])
     {
-        if (str[i] != '-')
-            i++;
-        else
+        if (str[i] == '-')
             count += 1;
         i++;
     }
@@ -39,33 +37,36 @@ int     ft_count_operators(char *str)
 int     ft_atoi(char *str)
 {
     int     i;
-    int     j;
     int     res;
 
     res = 0;
     i = 0;
-    if (!(str[i] >= '0' && str[i] <= '9'))
-        return (0);
-    while (str[i])
+    while (str[i] != '\0')
     {
-        j = i + 1;
-        if ((ft_check_if_nbr(str[i])) && (ft_check_if_nbr(str[j])))
+        if (str[i] == ' ' || str[i] == '+' || str[i] == '-')
+            i++;
+        else if ((ft_check_if_nbr(str[i])))
+        {
+            printf("str[i]: %c\n", str[i]);
             res = res * 10 + str[i] - '0';
+            printf("res: %d\n", res);
+        }
+        else
+        {
+            if (ft_count_operators(str) == 0)
+                res *= -1;
+            return (res);
+        }
         i++;
     }
-    return (res);
+    return (0);
 }
 
 int     main(void)
 {
-    int     sys;
-    int     me;
-    char    str[] = "123ase75";
+    char    str[] = "-----123ase75";
 
-    sys = atoi(str);
-    me = ft_atoi(str);
     printf("str = %s\n", str);
-    printf("sys: %d\n", sys);
-    printf("me: %d\n", me);
+    printf("ft_atoi: %d\n", ft_atoi(str));
     return (0);
 }
