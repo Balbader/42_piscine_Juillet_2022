@@ -2,7 +2,7 @@
 
 int     ft_strlen(char *str)
 {
-    int     i;
+    int i;
 
     i = 0;
     while (str[i])
@@ -12,8 +12,8 @@ int     ft_strlen(char *str)
 
 int     ft_check_base(char *base)
 {
-    unsigned int    i;
-    unsigned int    j;
+    unsigned int i;
+    unsigned int j;
 
     if (ft_strlen(base) < 2)
         return (0);
@@ -38,8 +38,9 @@ int     ft_check_base(char *base)
     return (1);
 }
 
-void    ft_putnbr(int nbr, char *base)
+void    ft_putnbr_base(int nbr, char *base)
 {
+    int base_length;
 }
 
 int     main(void)
