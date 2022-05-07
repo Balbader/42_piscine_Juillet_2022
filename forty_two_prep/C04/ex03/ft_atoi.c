@@ -7,8 +7,8 @@ int     ft_check_if_nbr(char c)
 
 int     ft_count_operators(char *str)
 {
-    int     i;
-    int     count;
+    int i;
+    int count;
 
     count = 0;
     i = 0;
@@ -25,8 +25,8 @@ int     ft_count_operators(char *str)
 
 int     ft_atoi(char *str)
 {
-    int     i;
-    int     res;
+    int i;
+    int res;
 
     res = 0;
     i = 0;
