@@ -2,9 +2,9 @@
 
 void    ft_print_comb(void)
 {
-    int     a;
-    int     b;
-    int     c;
+    int a;
+    int b;
+    int c;
 
     a = '0';
     while (a <= '7')
