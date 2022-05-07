@@ -14,7 +14,7 @@ void    ft_print_numbers(int a, int b)
   ft_putchar(b % 10 + '0');
 }
 
-void ft_print_comb2(void)
+void    ft_print_comb2(void)
 {
   int a;
   int b;
