@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <stdio.h>
 
 int     ft_strlen(char *str)
 {
@@ -41,9 +42,41 @@ int     ft_check_base(char *base)
 void    ft_putnbr_base(int nbr, char *base)
 {
     int base_length;
+
+    if (!ft_check_base(base))
+        return ;
+    base_length = ft_strlen(base);
+    if (nbr == -2147483648)
+	{
+		write(1, "-", 1);
+		ft_putnbr_base(2147483648 / base_length, base);
+		ft_putnbr_base(2147483648 % base_length, base);
+		return ;
+	}
+	if (nbr < 0)
+	{
+		write(1, "-", 1);
+		nbr *= -1;
+	}
+	if (nbr < base_length)
+	{
+		write(1, &base[nbr], 1);
+		return ;
+	}
+	ft_putnbr_base(nbr / base_length, base);
+	ft_putnbr_base(nbr % base_length, base);
 }
 
 int     main(void)
 {
+    int nbr;
+    char base[] = "0123456789";
+    char base2[] = "0123456789abcdef";
+
+    nbr = -2147483648;
+    ft_putnbr_base(nbr, base);
+    printf("\n");
+    ft_putnbr_base(nbr, base2);
+
     return (0);
 }
