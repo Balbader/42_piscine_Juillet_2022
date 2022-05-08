@@ -2,7 +2,7 @@
 
 void    ft_is_negative(int n)
 {
-    char c;
+    char    c;
 
     if (n < 0)
     {
