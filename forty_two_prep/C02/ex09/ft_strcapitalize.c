@@ -34,7 +34,7 @@ int     ft_check_if_non_alpha(char *c)
 
 char    *ft_strcapitalize(char *str)
 {
-    int i;
+    int     i;
 
     i = 0;
     ft_str_to_lwr(str);
