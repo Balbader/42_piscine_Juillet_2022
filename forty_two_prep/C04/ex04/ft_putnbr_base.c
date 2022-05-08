@@ -3,6 +3,7 @@
 
 int     ft_strlen(char *str)
 {
+    int     i;
 
     i = 0;
     while (str[i])
@@ -12,8 +13,8 @@ int     ft_strlen(char *str)
 
 int     ft_check_base(char *base)
 {
-    unsigned int i;
-    unsigned int j;
+    unsigned int    i;
+    unsigned int    j;
 
     if (ft_strlen(base) < 2)
         return (0);
@@ -40,7 +41,7 @@ int     ft_check_base(char *base)
 
 void    ft_putnbr_base(int nbr, char *base)
 {
-    int base_length;
+    int     base_length;
 
     if (!ft_check_base(base))
         return ;
@@ -68,9 +69,9 @@ void    ft_putnbr_base(int nbr, char *base)
 
 int     main(void)
 {
-    int nbr;
-    char base[] = "0123456789";
-    char base2[] = "0123456789abcdef";
+    int     nbr;
+    char    base[] = "0123456789";
+    char    base2[] = "0123456789abcdef";
 
     nbr = -2147483648;
     ft_putnbr_base(nbr, base);
