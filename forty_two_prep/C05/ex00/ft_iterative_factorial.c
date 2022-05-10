@@ -5,7 +5,7 @@ int     ft_iterative_factorial(int nb)
 
     i = 1;
     res = 1;
-    if (nb < 0)
+    if (nb < 0 || nb != sizeof(int))
         return (0);
     while (i <= nb)
     {
