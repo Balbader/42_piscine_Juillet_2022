@@ -7,7 +7,7 @@ void    ft_putstr(char *str)
     i = 0;
     while (str[i])
         i++;
-    write(1, str, 1);
+    write(1, str, i);
 }
 
 char    ft_strcpy(char *dest, char *src)
