@@ -17,11 +17,8 @@ char    *ft_strdup(char *src)
 
     src_len = ft_strlen(src);
     duplicate = (char *)malloc(src_len * sizeof(char));
-
-    return (0);
-}
-
-int     main(void)
-{
-    return (0);
+    if (!(duplicate = (char *)malloc(src_len * sizeof(char))))
+        return (0);
+    duplicate = src;
+    return (duplicate);
 }
