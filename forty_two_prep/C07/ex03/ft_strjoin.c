@@ -19,7 +19,7 @@ int     final_size(int size, char **strs, char *sep)
     tot_len = 0;
     while (i < size)
     {
-        tot_len = tot_len + ft_strlen(strs[i]);
+        tot_len += ft_strlen(strs[i]);
         i++;
     }
     if (!size)
