@@ -38,9 +38,8 @@ int     main(void)
     int     len_strs;
     int     i;
 
-    sep = "-------------------------------";
+    sep = "+";
     len_strs = sizeof(strs) / sizeof(strs[0]);
-    printf("len_strs: %d\n", len_strs);
     res = (char *)malloc((len_strs * 2) * sizeof(char *));
     i = 0;
     while (i < len_strs)
