@@ -70,13 +70,10 @@ void    ft_putnbr_base(int nbr, char *base)
 int     main(void)
 {
     int     nbr;
-    char    base[] = "0123456789";
-    char    base2[] = "0123456789ABCDEF";
+    char    base[] = "0123456789ABCDEF";
 
-    nbr = 8364;
+    nbr = 3390;
     ft_putnbr_base(nbr, base);
-    printf("\n");
-    ft_putnbr_base(nbr, base2);
 
     return (0);
 }
