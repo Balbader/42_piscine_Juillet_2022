@@ -71,9 +71,9 @@ int     main(void)
 {
     int     nbr;
     char    base[] = "0123456789";
-    char    base2[] = "0123456789abcdef";
+    char    base2[] = "0123456789ABCDEF";
 
-    nbr = -2147483648;
+    nbr = 8364;
     ft_putnbr_base(nbr, base);
     printf("\n");
     ft_putnbr_base(nbr, base2);
