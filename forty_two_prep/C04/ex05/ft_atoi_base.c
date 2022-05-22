@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 int     ft_strlen(char *str)
 {
     int     i;
@@ -63,5 +61,27 @@ int     ft_base_is_ok(char *base)
 
 int     ft_atoi_base(char *str, char *base)
 {
+    int i;
+	int result;
+	int sign;
 
+	i = 0;
+	sign = 1;
+	result = 0;
+	if (!ft_base_is_ok(base))
+		return (0);
+	while (ft_check_base(str[i]))
+		i++;
+	while (str[i] == '+' || str[i] == '-')
+	{
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while (ft_base_position(base, str[i]) != -1)
+	{
+		result = ft_base_position(base, str[i]) + result * ft_strlen(base);
+		i++;
+	}
+	return (sign * result);
 }
