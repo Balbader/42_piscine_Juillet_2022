@@ -19,7 +19,7 @@ int     main(void)
 {
     char    str[] = "Hello world my name is balou";
     //char    sep[] = "bitch";
-    //char    res[250][250];
+    char    res[250][250];
     char    temp[250];
     int     i;
     //int     j;
@@ -33,6 +33,8 @@ int     main(void)
             temp[i] = '\0';
         i++;
     }
+    j = 0;
+    while ()
     printf("%s\n", temp);
     return (0);
 }
