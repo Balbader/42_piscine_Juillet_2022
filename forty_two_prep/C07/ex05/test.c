@@ -33,12 +33,6 @@ int     main(void)
             temp[i] = '\0';
         i++;
     }
-    j = 0;
-    while (temp[j])
-    {
-        printf("%c\n", temp[j]);
-        j++;
-    }
     printf("%s\n", temp);
     return (0);
 }
