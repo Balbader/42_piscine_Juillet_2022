@@ -18,11 +18,10 @@ char    *ft_strcpy(char *dest, char *src)
 int     main(void)
 {
     char    str[] = "Hello world my name is balou";
-    //char    sep[] = "bitch";
-    char    res[250][250];
+    //char    res[250][250];
     char    temp[250];
     int     i;
-    //int     j;
+    int     j;
 
     i = 0;
     while(str[i])
@@ -34,5 +33,11 @@ int     main(void)
         i++;
     }
     printf("%s\n", temp);
+    j = 0;
+    while (str[j])
+    {
+        printf("%c", str[j]);
+        j++;
+    }
     return (0);
 }
