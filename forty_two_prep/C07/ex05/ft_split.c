@@ -2,5 +2,6 @@
 
 char    **ft_split(char *str, char *charset)
 {
-    return (*str);
+    char    **tab;
+    return (tab);
 }
