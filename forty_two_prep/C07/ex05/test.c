@@ -14,16 +14,16 @@ int main(void)
     k = 0;
     while (str[i])
     {
-        while (str[i] != ' ')
+        res[j][k] = str[i];
+        k++;
+        i++;
+        if (str[i] == ' ')
         {
-            res[j][k] = str[i];
-            k++;
+            printf("res[%d]: %s\n", j, res[j]);
+            k = 0;
+            j++;
             i++;
         }
-        printf("res[%d]: %s\n", j, res[j]);
-        k = 0;
-        j++;
-        i++;
     }
     return (0);
 }
