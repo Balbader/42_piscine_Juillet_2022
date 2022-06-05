@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int     main(void)
+int main(void)
 {
-    char    *str = "Hello my name is balou";
-    char    res[50][50];
-    int     i;
-    int     j;
-    int     k;
+    char *str = "Hello my name is balou";
+    char res[50][50];
+    int i;
+    int j;
+    int k;
 
     i = 0;
     j = 0;
