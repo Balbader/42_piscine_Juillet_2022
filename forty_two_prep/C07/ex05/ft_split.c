@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <stdlib.h>
 
 char **ft_split(char *str, char *charset)
@@ -9,6 +10,6 @@ char **ft_split(char *str, char *charset)
 int main(void)
 {
 	char *str = "Hello my name is balou";
-	char *split = "SPLIT";
+	char *split = " ";
 	return (0);
 }
