@@ -86,9 +86,9 @@ char *ft_strjoin(int size, char **strs, char *sep)
 
 int main(void)
 {
-	char *strs[50] = {"Hello", "My", "Name", "Is", "Balou"};
-	char *sep = "!!!!!!!!!!";
-	int size = 5;
+	char *strs[50] = {"Hello", "My", "Name", "Is", "Balou", "I", "Am", "Pleased", "To", "Meet", "You"};
+	char *sep = "+";
+	int size = 11;
 
 	printf("%s\n", ft_strjoin(size, strs, sep));
 	return (0);
