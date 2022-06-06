@@ -55,6 +55,7 @@ char *ft_strcat(char *dest, char *src)
 	{
 		dest[i] = src[j];
 		j++;
+		i++;
 	}
 	dest[i] = '\0';
 	return (dest);
@@ -64,7 +65,6 @@ char *ft_strjoin(int size, char **strs, char *sep)
 {
 	char *final_string;
 	int tot_len;
-	int j;
 	int i;
 
 	tot_len = ft_sep_len(sep, size) + ft_strs_len(strs, size);
@@ -72,24 +72,22 @@ char *ft_strjoin(int size, char **strs, char *sep)
 	i = 0;
 	while (i < size)
 	{
-		ft_strcat(final_string, strs[i]);
-		printf("%s\n", final_string);
-		j = 0;
-		while (i < (size - 1))
+		if (i == (size - 1))
 		{
-			ft_strcat(final_string, sep);
-			printf("%s\n", final_string);
-			j++;
+			ft_strcat(final_string, strs[i]);
+			return (final_string);
 		}
+		ft_strcat(final_string, strs[i]);
+		ft_strcat(final_string, sep);
 		i++;
 	}
-	return (final_string);
+	return (0);
 }
 
 int main(void)
 {
 	char *strs[50] = {"Hello", "My", "Name", "Is", "Balou"};
-	char *sep = "...";
+	char *sep = "!!!!!!!!!!";
 	int size = 5;
 
 	printf("%s\n", ft_strjoin(size, strs, sep));
