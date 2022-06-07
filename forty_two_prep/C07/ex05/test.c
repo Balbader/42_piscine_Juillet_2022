@@ -2,16 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(void)
-{
-	const char *str = "Hello my name is balou";
-	const char *split = "aeiou";
-
-	char temp[50];
-
-	return (0);
-}
-
 /*
 The Idea:
 
@@ -32,3 +22,28 @@ Steps:
 
 5. Repeat 1 => 4 till there is no more seperator characters encountered
 */
+
+int main(void)
+{
+	const char *str = "Hello my name is balou";
+	const char *split = "aeiou";
+	char **tab;
+
+	char temp[50];
+	int i;
+	int j;
+
+	i = 0;
+	while (str[i])
+	{
+		j = 0;
+		while (split[j])
+		{
+
+			j++;
+		}
+		i++;
+	}
+
+	return (0);
+}
