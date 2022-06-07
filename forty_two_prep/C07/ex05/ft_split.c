@@ -36,8 +36,8 @@ char **ft_split(char *str, char *charset)
 
 int main(void)
 {
-	char *str = "Hello my name is balou";
-	char *split = "aeiou";
+	const char *str = "Hello my name is balou";
+	const char *split = "aeiou";
 
 	return (0);
 }
