@@ -102,5 +102,6 @@ int main(void)
 		printf("%s\n", test[i]);
 		i++;
 	}
+	printf("ft_strdup_sep: %s\n", ft_strdup_spe(str, sep));
 	return (0);
 }
