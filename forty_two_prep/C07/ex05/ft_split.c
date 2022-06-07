@@ -14,6 +14,10 @@
 //    the last seperator character encountered
 // 5. Repeat 1 => 4 till there is no more seperator characters encountered
 
+int ft_is_sep(char *split)
+{
+}
+
 char *ft_strcpy(char *dest, char *src)
 {
 	int i;
