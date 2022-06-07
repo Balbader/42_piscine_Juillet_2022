@@ -2,6 +2,56 @@
 #include <stdlib.h>
 #include <string.h>
 
+/* Function to check if character is forbidden */
+int ft_is_forbidden(const char *split, char c)
+{
+	int i;
+
+	i = 0;
+	while (split[i])
+	{
+		if (c == split[i])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+char **ft_split(char *str, char *charset)
+{
+	char **tab;
+	return (tab);
+}
+
+int main(void)
+{
+	const char str[] = "Hello my name is balou";
+	const char split[] = "aeiou";
+
+	return (0);
+}
+
+/* Function to store all non forbidden characters */
+// char *ft_create_stripped_string(const char *str, const char *split)
+// {
+// 	char *temp;
+// 	int i;
+// 	int j;
+
+// 	temp = (char *)malloc(sizeof(char) * ft_count_strlen(str, split));
+// 	i = 0;
+// 	j = 0;
+// 	while (str[i])
+// 	{
+// 		if (!(ft_is_forbidden(split, str[i])))
+// 			i++;
+// 		temp[j] = str[i];
+// 		i++;
+// 		j++;
+// 	}
+// 	temp[j] = '\0';
+// 	return (temp);
+// }
 /*
 The Idea:
 
@@ -22,43 +72,3 @@ Steps:
 
 5. Repeat 1 => 4 till there is no more seperator characters encountered
 */
-
-int is_char_sep(const char *split, char c)
-{
-	int i;
-
-	i = 0;
-	while (split[i])
-	{
-		if (c == split[i])
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-int main(void)
-{
-	const char str[] = "Hello my name is balou";
-	const char split[] = "aeiou";
-	char temp[250];
-
-	int i;
-	int j;
-
-	printf("Split: %s\n", split);
-	printf("Str:   %s\n", str);
-
-	i = 0;
-	j = 0;
-	while (str[i])
-	{
-		if (!(is_char_sep(split, str[i])))
-			i++;
-		temp[j] = str[i];
-		i++;
-		j++;
-	}
-	printf("Temp:  %s\n", temp);
-	return (0);
-}
