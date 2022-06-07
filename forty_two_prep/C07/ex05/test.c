@@ -17,10 +17,55 @@ int ft_is_forbidden(const char *split, char c)
 	return (1);
 }
 
-char **ft_split(char *str, char *charset)
+/* Function that defines the length of every string between 2 seperator */
+int **ft_strs_len(const char *str, const char *split)
 {
-	char **tab;
-	return (tab);
+	int **strs_len;
+	int count;
+	int i;
+	int j;
+	int k;
+
+	count = 0;
+	i = 0;
+	j = 0;
+	while (str[i])
+	{
+		if (!ft_is_forbidden(split, str[i]))
+		{
+			strs_len[j] = (int *)malloc(sizeof(int) * count);
+			strs_len[j][k] = count;
+			printf("%d\n", *strs_len[j]);
+			j++;
+			i++;
+			count = 0;
+		}
+		count++;
+		i++;
+	}
+	return (strs_len);
+}
+
+/* Function to store all non forbidden characters */
+char *ft_create_stripped_string(const char *str, const char *split)
+{
+	char *temp;
+	int i;
+	int j;
+
+	count = 0;
+	i = 0;
+	j = 0;
+	while (str[i])
+	{
+		if (!(ft_is_forbidden(split, str[i])))
+			i++;
+		temp[j] = str[i];
+		i++;
+		j++;
+	}
+	temp[j] = '\0';
+	return (temp);
 }
 
 int main(void)
@@ -28,47 +73,13 @@ int main(void)
 	const char str[] = "Hello my name is balou";
 	const char split[] = "aeiou";
 
+	ft_strs_len(str, split);
 	return (0);
 }
 
-/* Function to store all non forbidden characters */
-// char *ft_create_stripped_string(const char *str, const char *split)
+// char **ft_split(char *str, char *charset)
 // {
+// 	char **tab;
 // 	char *temp;
-// 	int i;
-// 	int j;
-
-// 	temp = (char *)malloc(sizeof(char) * ft_count_strlen(str, split));
-// 	i = 0;
-// 	j = 0;
-// 	while (str[i])
-// 	{
-// 		if (!(ft_is_forbidden(split, str[i])))
-// 			i++;
-// 		temp[j] = str[i];
-// 		i++;
-// 		j++;
-// 	}
-// 	temp[j] = '\0';
-// 	return (temp);
+// 	return (tab);
 // }
-/*
-The Idea:
-
-Create an 2d array that will take in every segment of the string the is
-preceded and followed by any character within the *split string.
-
-Steps:
-
-1. Run through the main string and COPY to temp every character encountered
-
-2. As soon as you encounter a seperator character,
-	all characters saved in temp will constitute the string to be saved
-
-3. Reset temp to 0
-
-4. Start running through the main string from
-	 the last seperator character encountered
-
-5. Repeat 1 => 4 till there is no more seperator characters encountered
-*/
