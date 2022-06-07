@@ -23,27 +23,42 @@ Steps:
 5. Repeat 1 => 4 till there is no more seperator characters encountered
 */
 
+int is_char_sep(const char *split, char c)
+{
+	int i;
+
+	i = 0;
+	while (split[i])
+	{
+		if (c == split[i])
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 int main(void)
 {
-	const char *str = "Hello my name is balou";
-	const char *split = "aeiou";
-	char **tab;
+	const char str[] = "Hello my name is balou";
+	const char split[] = "aeiou";
+	char temp[250];
 
-	char temp[50];
 	int i;
 	int j;
 
+	printf("Split: %s\n", split);
+	printf("Str:   %s\n", str);
+
 	i = 0;
+	j = 0;
 	while (str[i])
 	{
-		j = 0;
-		while (split[j])
-		{
-
-			j++;
-		}
+		if (!(is_char_sep(split, str[i])))
+			i++;
+		temp[j] = str[i];
 		i++;
+		j++;
 	}
-
+	printf("Temp:  %s\n", temp);
 	return (0);
 }
