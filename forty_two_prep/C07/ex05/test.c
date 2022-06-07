@@ -18,33 +18,6 @@ int ft_is_forbidden(char *split, char c)
 }
 
 /* Function that defines the length of every string between 2 seperator */
-int **ft_strs_len(char *str, char *split)
-{
-	int **strs_len;
-	int count;
-	int i;
-	int j;
-	int k;
-
-	count = 0;
-	i = 0;
-	j = 0;
-	while (str[i])
-	{
-		if (!ft_is_forbidden(split, str[i]))
-		{
-			strs_len[j] = (int *)malloc(sizeof(int) * count);
-			strs_len[j][k] = count;
-			printf("%d\n", *strs_len[j]);
-			j++;
-			i++;
-			count = 0;
-		}
-		count++;
-		i++;
-	}
-	return (strs_len);
-}
 
 /* Function to store all non forbidden characters */
 char *ft_create_stripped_string(char *str, char *split)
@@ -53,7 +26,7 @@ char *ft_create_stripped_string(char *str, char *split)
 	int i;
 	int j;
 
-	count = 0;
+	temp = (char *)malloc(sizeof(char));
 	i = 0;
 	j = 0;
 	while (str[i])
@@ -73,13 +46,12 @@ int main(void)
 	char str[] = "Hello my name is balou";
 	char split[] = "aeiou";
 
-	ft_strs_len(str, split);
+	printf("%s\n", ft_create_stripped_string(str, split));
 	return (0);
 }
 
 // char **ft_split(char *str, char *charset)
 // {
 // 	char **tab;
-// 	char *temp;
 // 	return (tab);
 // }
