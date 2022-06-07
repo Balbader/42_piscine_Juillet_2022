@@ -3,7 +3,7 @@
 #include <string.h>
 
 /* Function to check if character is forbidden */
-int ft_is_forbidden(const char *split, char c)
+int ft_is_forbidden(char *split, char c)
 {
 	int i;
 
@@ -18,7 +18,7 @@ int ft_is_forbidden(const char *split, char c)
 }
 
 /* Function that defines the length of every string between 2 seperator */
-int **ft_strs_len(const char *str, const char *split)
+int **ft_strs_len(char *str, char *split)
 {
 	int **strs_len;
 	int count;
@@ -47,7 +47,7 @@ int **ft_strs_len(const char *str, const char *split)
 }
 
 /* Function to store all non forbidden characters */
-char *ft_create_stripped_string(const char *str, const char *split)
+char *ft_create_stripped_string(char *str, char *split)
 {
 	char *temp;
 	int i;
@@ -70,8 +70,8 @@ char *ft_create_stripped_string(const char *str, const char *split)
 
 int main(void)
 {
-	const char str[] = "Hello my name is balou";
-	const char split[] = "aeiou";
+	char str[] = "Hello my name is balou";
+	char split[] = "aeiou";
 
 	ft_strs_len(str, split);
 	return (0);
