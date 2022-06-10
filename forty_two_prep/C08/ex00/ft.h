@@ -1,5 +1,4 @@
 #ifndef FT_H // IF NOT DEFINED
-
 #define FT_H // DEFINE
 
 void ft_putchar(char c);
