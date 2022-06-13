@@ -34,7 +34,7 @@ int ft_count_split(char *str, char *split)
 			i++;
 		count++;
 	}
-	/* if the char the preceeds the actual one is a split, decrease count */
+	/* if the char the preceding the actual one is a split, decrease count */
 	if (ft_is_sep(str[i - 1], split) == 1)
 		count--;
 	return (count);
