@@ -25,6 +25,7 @@ int main(void)
 		i++;
 	}
 
+	/* Find out why res_size = 1 and not 5 like tab_size ??? */
 	res_size = sizeof(res) / sizeof(res[0]);
 	printf("res_size: %d\n", res_size);
 	j = 0;
