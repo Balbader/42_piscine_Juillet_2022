@@ -7,7 +7,6 @@ int main(void)
 {
 	char *tab[] = {"Hello", "My", "Name", "Is", "Balou"};
 	char **res;
-	// char *str = "aeiou";
 	int tab_size;
 	int res_size;
 	int i;
