@@ -103,8 +103,12 @@ char **ft_split(char *str, char *charset)
 			i++;
 		j = 0;
 		while (ft_check_char(str[i], charset) == 0 && str[i])
-			tab[k][j++] = str[i++];
-		tab[k++][j] = 0;
+		{
+			tab[k][j] = str[i];
+			j++;
+			i++;
+		}
+		k++;
 	}
 	tab[k] = 0;
 	return (tab);
