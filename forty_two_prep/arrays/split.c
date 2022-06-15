@@ -64,6 +64,17 @@ int *ft_str_len(char *str, char *split)
 	return (str_len);
 }
 
+/*
+1. allocate memory space for each string in **tab
+2. Copy each string to **tab
+3. Print **tab
+*/
+char **ft_split(char *str, char *charset)
+{
+	char **tab;
+	return (tab);
+}
+
 int main(void)
 {
 	char *str = "Hello my name is moon";
@@ -81,10 +92,3 @@ int main(void)
 	}
 	return (0);
 }
-
-/*
-1. Define the length of each string based on sep = ok
-2. allocate memory space for each string in **tab
-3. Copy each string to **tab
-3. Print **tab
-*/
