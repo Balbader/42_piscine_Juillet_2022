@@ -69,8 +69,18 @@ int main(void)
 	char *str = "Hello my name is balou";
 	char *split = " ";
 	char **tab;
+	int *strs_len;
+	int i;
+	int j;
+	int k;
 
+	strs_len = ft_str_len(str, split);
 	tab = (char **)malloc(sizeof(char *) * ft_count_split(str, split)) + 1;
+	k = 0;
+	i = 0;
+	while (k < ft_count_split(str, split))
+	{
+	}
 
 	return (0);
 }
