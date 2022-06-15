@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Compare each character to split to find split in str */
+//==============================================================================
 int ft_check_char(char c, char *split)
 {
 	int i;
@@ -16,7 +16,7 @@ int ft_check_char(char c, char *split)
 	return (0);
 }
 
-/* Count total occurrences of split in str */
+//==============================================================================
 int ft_count_split(char *str, char *split)
 {
 	int count;
@@ -37,7 +37,7 @@ int ft_count_split(char *str, char *split)
 	return (count);
 }
 
-/* Define the length of each string based on sep */
+//==============================================================================
 int *ft_str_len(char *str, char *split)
 {
 	int *str_len;
@@ -64,39 +64,75 @@ int *ft_str_len(char *str, char *split)
 	return (str_len);
 }
 
-int main(void)
+//==============================================================================
+char **alloc_mem_to_tab(char *str, char *charset)
 {
-	char *str = "Hello my name is balou";
-	char *split = " ";
 	char **tab;
 	int *strs_len;
+	int i;
+
+	strs_len = ft_str_len(str, charset);
+	if (!(tab = (char **)malloc(sizeof(char *) * (ft_count_split(str, charset)) + 1)))
+		return (0);
+	i = 0;
+	while (i < ft_count_split(str, charset))
+	{
+		tab[i] = (char *)malloc(sizeof(char) * strs_len[i]);
+		i++;
+	}
+	return (tab);
+}
+
+//==============================================================================
+char **ft_split(char *str, char *charset)
+{
+	char **tab;
 	int i;
 	int j;
 	int k;
 
-	strs_len = ft_str_len(str, split);
-	tab = (char **)malloc(sizeof(char *) * ft_count_split(str, split)) + 1;
+	tab = alloc_mem_to_tab(str, charset);
+	j = 0;
+	if (ft_check_char(str[j], charset) == 1)
+	{
+		while (ft_check_char(str[j], charset) == 1)
+			j++;
+	}
 	k = 0;
 	i = 0;
-	while (k < ft_count_split(str, split))
+	while (k < ft_count_split(str, charset))
 	{
+		while (str[j])
+		{
+			if (ft_check_char(str[j], charset) == 1)
+			{
+				k++;
+				j++;
+				i = 0;
+			}
+			tab[k][i] = str[j];
+			i++;
+			j++;
+		}
+		k++;
 	}
-
-	return (0);
+	tab[k] = 0;
+	return (tab);
 }
 
-/*
-1. allocate memory space for each string in **tab
-2. Copy each string to **tab
-3. Print **tab
-*/
-// char **ft_split(char *str, char *charset)
-// {
-// 	char **tab;
-// 	int *str_len;
-// 	int i;
-// 	int j;
+int main(void)
+{
+	char *str = "mmmmmmmmHello my name is balou";
+	char *split = "m";
+	char **tab;
+	int i;
 
-// 	str_len = ft_str_len(str, charset);
-// 	return (tab);
-// }
+	tab = ft_split(str, split);
+	i = 0;
+	while (i < ft_count_split(str, split))
+	{
+		printf("%s\n", tab[i]);
+		i++;
+	}
+	return (0);
+}
