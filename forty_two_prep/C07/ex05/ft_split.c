@@ -26,10 +26,8 @@ int ft_count_split(char *str, char *split)
 	count = 0;
 	while (str[i])
 	{
-		/* No matter the character, we will count tot str length and increment count */
 		while (str[i] && ft_is_sep(str[i], split) == 1)
 			i++;
-		/* No matter the character, we will count tot str length and increment count */
 		while (str[i] && ft_is_sep(str[i], split) == 0)
 			i++;
 		count++;
