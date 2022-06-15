@@ -32,7 +32,7 @@ int ft_count_split(char *str, char *split)
 			i++;
 		count++;
 	}
-	if (ft_check_char(str[i] - 1, split) == 1)
+	if (ft_check_char(str[i - 1], split) == 1)
 		count--;
 	return (count);
 }
@@ -64,39 +64,29 @@ int *ft_str_len(char *str, char *split)
 	return (str_len);
 }
 
+int main(void)
+{
+	char *str = "Hello my name is balou";
+	char *split = " ";
+	char **tab;
+
+	tab = (char **)malloc(sizeof(char *) * ft_count_split(str, split)) + 1;
+
+	return (0);
+}
+
 /*
 1. allocate memory space for each string in **tab
 2. Copy each string to **tab
 3. Print **tab
 */
-char **ft_split(char *str, char *charset)
-{
-	char **tab;
-	int *str_len;
-	int i;
-	int j;
+// char **ft_split(char *str, char *charset)
+// {
+// 	char **tab;
+// 	int *str_len;
+// 	int i;
+// 	int j;
 
-	str_len = ft_str_len(str, charset);
-
-	return (tab);
-}
-
-int main(void)
-{
-	char *str = "Hello my name is balou";
-	char *split = "aeiou";
-	int *str_len;
-	int tot_split;
-	int i;
-
-	tot_split = ft_count_split(str, split);
-	printf("tot_split: %d\n", tot_split);
-	str_len = ft_str_len(str, split);
-	i = 0;
-	while (i < ft_count_split(str, split))
-	{
-		printf("str_len[%d]: %d\n", i, str_len[i]);
-		i++;
-	}
-	return (0);
-}
+// 	str_len = ft_str_len(str, charset);
+// 	return (tab);
+// }
