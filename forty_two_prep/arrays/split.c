@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//==============================================================================
+/* compare a given char with *split characters k*/
 int ft_check_char(char c, char *split)
 {
 	int i;
@@ -16,7 +16,8 @@ int ft_check_char(char c, char *split)
 	return (0);
 }
 
-//==============================================================================
+/* count tot occurrences of *split characters in *str in order
+	to know the total numbers of strings to be stocked in final **tab */
 int ft_count_split(char *str, char *split)
 {
 	int count;
@@ -37,7 +38,8 @@ int ft_count_split(char *str, char *split)
 	return (count);
 }
 
-//==============================================================================
+/* Create an arr of int that holds the length of each string that will
+	 be stocked in final **tab */
 int *ft_str_len(char *str, char *split)
 {
 	int *str_len;
@@ -64,7 +66,8 @@ int *ft_str_len(char *str, char *split)
 	return (str_len);
 }
 
-//==============================================================================
+/* Allocate sufficient memory space in **tab to be
+	 able to receive each string */
 char **alloc_mem_to_tab(char *str, char *charset)
 {
 	char **tab;
@@ -83,7 +86,7 @@ char **alloc_mem_to_tab(char *str, char *charset)
 	return (tab);
 }
 
-//==============================================================================
+/* Split *str into individual strings */
 char **ft_split(char *str, char *charset)
 {
 	char **tab;
