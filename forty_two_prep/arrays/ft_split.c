@@ -116,8 +116,8 @@ char **ft_split(char *str, char *charset)
 
 int main(void)
 {
-	char *str = "mmmmmmmmHello my name is balou";
-	char *split = " maeiou";
+	char *str = "Hello my//name is balou";
+	char *split = " aeiou";
 	char **tab;
 	int i;
 
@@ -125,7 +125,7 @@ int main(void)
 	i = 0;
 	while (i < ft_count_split(str, split))
 	{
-		printf("%s\n", tab[i]);
+		printf("tab[%d]: %s\n", i, tab[i]);
 		i++;
 	}
 	return (0);
