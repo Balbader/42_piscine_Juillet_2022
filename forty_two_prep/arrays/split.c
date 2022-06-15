@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/* Compare each character to split to find split in str */
 int ft_check_char(char c, char *split)
 {
 	int i;
@@ -15,6 +16,7 @@ int ft_check_char(char c, char *split)
 	return (0);
 }
 
+/* Count total occurrences of split in str */
 int ft_count_split(char *str, char *split)
 {
 	int count;
@@ -35,31 +37,22 @@ int ft_count_split(char *str, char *split)
 	return (count);
 }
 
-int main(void)
+/* Define the length of each string based on sep */
+int *ft_str_len(char *str, char *split)
 {
-	char *str = "Hello my name is moon";
-	char *sep = " ";
-	char **tab;
 	int *str_len;		// int tab to store the length of each string
 	int temp_count; // variable to temp store the length of each str
 	int i;
 	int j;
 
-	/*
-	1. Define the length of each string based on sep = ok
-	2. allocate memory space for each string in **tab
-	3. Copy each string to **tab
-	3. Print **tab
-	*/
-
-	str_len = (int *)malloc((sizeof(int) * ft_count_split(str, sep)));
+	str_len = (int *)malloc((sizeof(int) * ft_count_split(str, split)));
 	temp_count = 0;
 	j = 0;
 	i = 0;
 	while (str[i])
 	{
 		temp_count++;
-		if (ft_check_char(str[i], sep) == 1)
+		if (ft_check_char(str[i], split) == 1)
 		{
 			str_len[j] = temp_count - 1;
 			j++;
@@ -68,7 +61,18 @@ int main(void)
 		i++;
 	}
 	str_len[j] = temp_count;
+	return (str_len);
+}
 
+int main(void)
+{
+	char *str = "Hello my name is moon";
+	char *split = " ";
+	int *str_len;
+	int i;
+	// char **tab;
+
+	str_len = ft_str_len(str, split);
 	i = 0;
 	while (i < 5)
 	{
@@ -77,3 +81,10 @@ int main(void)
 	}
 	return (0);
 }
+
+/*
+1. Define the length of each string based on sep = ok
+2. allocate memory space for each string in **tab
+3. Copy each string to **tab
+3. Print **tab
+*/
