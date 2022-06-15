@@ -72,13 +72,31 @@ int *ft_str_len(char *str, char *split)
 char **ft_split(char *str, char *charset)
 {
 	char **tab;
+	int *str_len;
+	int i;
+	int j;
+
+	str_len = ft_str_len(str, charset);
+
 	return (tab);
 }
 
 int main(void)
 {
-	char *str = "Hello my name is moon";
-	char *split = " ";
+	char *str = "Hello my name is balou";
+	char *split = "aeiou";
+	int *str_len;
+	int tot_split;
+	int i;
 
+	tot_split = ft_count_split(str, split);
+	printf("tot_split: %d\n", tot_split);
+	str_len = ft_str_len(str, split);
+	i = 0;
+	while (i < ft_count_split(str, split))
+	{
+		printf("str_len[%d]: %d\n", i, str_len[i]);
+		i++;
+	}
 	return (0);
 }
