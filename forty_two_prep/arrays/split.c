@@ -40,8 +40,8 @@ int ft_count_split(char *str, char *split)
 /* Define the length of each string based on sep */
 int *ft_str_len(char *str, char *split)
 {
-	int *str_len;		// int tab to store the length of each string
-	int temp_count; // variable to temp store the length of each str
+	int *str_len;
+	int temp_count;
 	int i;
 	int j;
 
