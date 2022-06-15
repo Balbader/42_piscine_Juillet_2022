@@ -39,14 +39,14 @@ int main(void)
 {
 	char *str = "Hello my name is moon";
 	char *sep = " ";
-	// char **tab;
+	char **tab;
 	int *str_len;		// int tab to store the length of each string
 	int temp_count; // variable to temp store the length of each str
 	int i;
 	int j;
 
 	/*
-	1. Define the length of each string based on sep
+	1. Define the length of each string based on sep = ok
 	2. allocate memory space for each string in **tab
 	3. Copy each string to **tab
 	3. Print **tab
