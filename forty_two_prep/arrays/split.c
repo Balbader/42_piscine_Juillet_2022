@@ -79,16 +79,6 @@ int main(void)
 {
 	char *str = "Hello my name is moon";
 	char *split = " ";
-	int *str_len;
-	int i;
-	// char **tab;
 
-	str_len = ft_str_len(str, split);
-	i = 0;
-	while (i < 5)
-	{
-		printf("str_len[%d]: %d\n", i, str_len[i]);
-		i++;
-	}
 	return (0);
 }
