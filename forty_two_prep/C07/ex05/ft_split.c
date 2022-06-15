@@ -1,43 +1,92 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* Compare string character and seperator */
-int ft_is_sep(char c, char *split)
+/* compare a given char with *split characters k*/
+int ft_check_char(char c, char *split)
 {
 	int i;
 
 	i = 0;
 	while (split[i])
 	{
-		if (split[i] == c)
+		if (c == split[i])
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-/* Count the total number of occurences of seperator in string */
+/* count tot occurrences of *split characters in *str in order
+	to know the total numbers of strings to be stocked in final **tab */
 int ft_count_split(char *str, char *split)
 {
-	int i;
 	int count;
+	int i;
 
-	i = 0;
 	count = 0;
+	i = 0;
 	while (str[i])
 	{
-		while (str[i] && ft_is_sep(str[i], split) == 1)
+		while (str[i] && ft_check_char(str[i], split) == 1)
 			i++;
-		while (str[i] && ft_is_sep(str[i], split) == 0)
+		while (str[i] && ft_check_char(str[i], split) == 0)
 			i++;
 		count++;
 	}
-	/* if the char the preceding the actual one is a split, decrease count */
-	if (ft_is_sep(str[i - 1], split) == 1)
+	if (ft_check_char(str[i - 1], split) == 1)
 		count--;
 	return (count);
 }
 
+/* Create an arr of int that holds the length of each string that will
+	 be stocked in final **tab */
+int *ft_str_len(char *str, char *split)
+{
+	int *str_len;
+	int temp_count;
+	int i;
+	int j;
+
+	str_len = (int *)malloc((sizeof(int) * ft_count_split(str, split)));
+	temp_count = 0;
+	j = 0;
+	i = 0;
+	while (str[i])
+	{
+		temp_count++;
+		if (ft_check_char(str[i], split) == 1)
+		{
+			str_len[j] = temp_count - 1;
+			j++;
+			temp_count = 0;
+		}
+		i++;
+	}
+	str_len[j] = temp_count;
+	return (str_len);
+}
+
+/* Allocate sufficient memory space in **tab to be
+	 able to receive each string */
+char **alloc_mem_to_tab(char *str, char *charset)
+{
+	char **tab;
+	int *strs_len;
+	int i;
+
+	strs_len = ft_str_len(str, charset);
+	if (!(tab = (char **)malloc(sizeof(char *) * (ft_count_split(str, charset)) + 1)))
+		return (0);
+	i = 0;
+	while (i < ft_count_split(str, charset))
+	{
+		tab[i] = (char *)malloc(sizeof(char) * strs_len[i]);
+		i++;
+	}
+	return (tab);
+}
+
+/* Split *str into individual strings */
 char **ft_split(char *str, char *charset)
 {
 	char **tab;
@@ -45,28 +94,21 @@ char **ft_split(char *str, char *charset)
 	int j;
 	int k;
 
-	/* If not enough space return 0 */
-	if (!(tab = malloc(sizeof(char *) * (ft_count_split(str, charset) + 1))))
-		return (0);
-
-	i = 0;
+	tab = alloc_mem_to_tab(str, charset);
 	k = 0;
+	i = 0;
 	while (k < ft_count_split(str, charset))
 	{
-		while (str[i] && ft_is_sep(str[i], charset) == 1)
+		while (str[i] && ft_check_char(str[i], charset) == 1)
 			i++;
-		j = i;
-		while (str[j] && ft_is_sep(str[j], charset) == 0)
-			j++;
-
-		/* If not enough space return 0 */
-		if (!(tab[k] = malloc(sizeof(char) * j)))
-			return (0);
-
 		j = 0;
-		while (ft_is_sep(str[i], charset) == 0 && str[i])
-			tab[k][j++] = str[i++];
-		tab[k++][j] = 0;
+		while (ft_check_char(str[i], charset) == 0 && str[i])
+		{
+			tab[k][j] = str[i];
+			j++;
+			i++;
+		}
+		k++;
 	}
 	tab[k] = 0;
 	return (tab);
@@ -74,16 +116,16 @@ char **ft_split(char *str, char *charset)
 
 int main(void)
 {
-	char *str = "Hello my name is balou";
-	char *split = " aeiou";
-	char **test;
+	char *str = "mmmmmmmmHello my name is balou";
+	char *split = " maeiou";
+	char **tab;
 	int i;
 
+	tab = ft_split(str, split);
 	i = 0;
-	test = ft_split(str, split);
-	while (test[i])
+	while (i < ft_count_split(str, split))
 	{
-		printf("%s\n", test[i]);
+		printf("%s\n", tab[i]);
 		i++;
 	}
 	return (0);
