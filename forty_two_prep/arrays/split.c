@@ -92,29 +92,16 @@ char **ft_split(char *str, char *charset)
 	int k;
 
 	tab = alloc_mem_to_tab(str, charset);
-	j = 0;
-	if (ft_check_char(str[j], charset) == 1)
-	{
-		while (ft_check_char(str[j], charset) == 1)
-			j++;
-	}
 	k = 0;
 	i = 0;
 	while (k < ft_count_split(str, charset))
 	{
-		while (str[j])
-		{
-			if (ft_check_char(str[j], charset) == 1)
-			{
-				k++;
-				j++;
-				i = 0;
-			}
-			tab[k][i] = str[j];
+		while (str[i] && ft_check_char(str[i], charset) == 1)
 			i++;
-			j++;
-		}
-		k++;
+		j = 0;
+		while (ft_check_char(str[i], charset) == 0 && str[i])
+			tab[k][j++] = str[i++];
+		tab[k++][j] = 0;
 	}
 	tab[k] = 0;
 	return (tab);
@@ -123,7 +110,7 @@ char **ft_split(char *str, char *charset)
 int main(void)
 {
 	char *str = "mmmmmmmmHello my name is balou";
-	char *split = "m";
+	char *split = " maeiou";
 	char **tab;
 	int i;
 
