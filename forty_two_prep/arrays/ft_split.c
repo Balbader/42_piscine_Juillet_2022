@@ -116,8 +116,8 @@ char **ft_split(char *str, char *charset)
 
 int main(void)
 {
-	char *str = "Hello my//name is balou";
-	char *split = " aeiou";
+	char *str = "H/e/l/l/o/m/y/n/a/m/e-i-s-b/-a////l---ou";
+	char *split = "/-";
 	char **tab;
 	int i;
 
