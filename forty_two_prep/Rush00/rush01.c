@@ -2,19 +2,10 @@
 
 void ft_putchar(char c);
 
-// void ft_check_line(int x, int y)
-// {
-// 	int i;
-// 	int j;
+/*
+1. When i = 0
+*/
 
-// 	if (j == 0 || j == y - 1)
-// 	{
-// 		if (i == 0)
-// 			ft_putchar('/');
-// 		if (i == x - 1)
-// 			ft_putchar('\\');
-// 	}
-// }
 void ft_print_line(int x, int y)
 {
 	int i;
@@ -26,12 +17,21 @@ void ft_print_line(int x, int y)
 		i = 0;
 		while (i < x)
 		{
-			if (j == 0 || j == y - 1)
+			if (j == 0)
 			{
 				if (i == 0)
 					ft_putchar('/');
-				if (i == x - 1)
+				else if (i == x - 1)
 					ft_putchar('\\');
+				else if (i > 0 && i < x - 1)
+					ft_putchar('*');
+			}
+			else if (j == y - 1)
+			{
+				if (i == 0)
+					ft_putchar('\\');
+				else if (i == x - 1)
+					ft_putchar('/');
 				else if (i > 0 && i < x - 1)
 					ft_putchar('*');
 			}
