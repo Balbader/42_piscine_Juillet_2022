@@ -1,9 +1,9 @@
-#include "rush00.c"
+#include "rush04.c"
 
 void rush(int x, int y);
 
 int main(void)
 {
-    rush(1, 5);
+    rush(4, 4);
     return (0);
 }
