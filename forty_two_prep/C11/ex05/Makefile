@@ -4,10 +4,10 @@ CFLAGS		=	-Wall -Wextra -Werror
 IFLAGS 		=	-I$(INC_PATH)
 RM			=	rm -rf
 INC_PATH 	=	includes
-INC_NAME	=	ft_doop.h
+INC_NAME	=	ft_do_op.h
 SRC_PATH 	= 	srcs
-SRC_NAME 	=	ft_doop.c \
-				ft_operators.c
+SRC_NAME 	=	ft_do_op.c \
+				ft_operations.c
 INC 		=	$(addprefix $(INC_PATH)/, $(INC_NAME))
 SRC 		=	$(addprefix $(SRC_PATH)/, $(SRC_NAME))
 
