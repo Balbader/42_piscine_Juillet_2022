@@ -4,6 +4,7 @@
 
 void    ft_putnbr(int nbr);
 void    ft_do_op(int a, int b, char *ope);
+void    ft_putchar(char c);
 int     ft_atoi(char *str);
 int     ft_is_op(char *str);
 
