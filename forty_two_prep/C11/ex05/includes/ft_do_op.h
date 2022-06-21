@@ -1,9 +1,9 @@
-#ifndef FT_DO_OP_H
-#define FT_DO_OP_H
+#ifndef FT_DOOP_H
+#define FT_DOOP_H
 #include <unistd.h>
 
 void    ft_putnbr(int nbr);
-void    ft_do_op(int a, int b, char *ope);
+void    ft_doop(int a, int b, char *ope);
 void    ft_putchar(char c);
 int     ft_atoi(char *str);
 int     ft_is_op(char *str);
