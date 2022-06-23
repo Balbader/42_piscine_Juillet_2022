@@ -91,7 +91,7 @@ int     ft_atoi_base(char *str, char *base)
 int main(void)
 {
     char *str = "+++--++234890Hello my name is balou";
-    char *base = "0123456789";
+    char *base = "0123456789ABCDEF";
 
     printf("%d\n", ft_atoi_base(str, base));
     return (0);
