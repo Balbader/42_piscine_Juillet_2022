@@ -1,54 +1,49 @@
 #include <stdio.h>
 
-int     ft_strlen(char *str)
+/*  */
+int		ft_is_in_base(char c, char *base)
 {
-    int     i;
-
+    int		i;
     i = 0;
-    while (str[i])
+    while (base[i] != c)
         i++;
+    if (base[i] == '\0')
+        return (0);
+    else
+        return (1);
+}
+
+int		ft_get_int_from_base(char c, char *base)
+{
+    int		i;
+    i = 0;
+    while (base[i])
+    {
+        if (base[i] == c)
+        {
+            return (i);
+        }
+        i++;
+    }
     return (i);
 }
 
-int     ft_check_base(char c)
+int		ft_check_base(char *base)
 {
-    if (c == '+' || c == '-' || c == ' ' || c == '\t' || c == '\n' || c == '\r'
-            || c == '\v')
-        return (0);
-    return (1);
-}
-
-int     ft_base_position(char *base, char c)
-{
-    int     i;
-
+    int		i;
+    int		j;
     i = 0;
-    while (i < ft_strlen(base))
-    {
-        if (base[i] == c)
-            return (i);
+    while (base[i])
         i++;
-    }
-    return (-1);
-}
-
-int     ft_base_is_ok(char *base)
-{
-    unsigned int    i;
-    unsigned int    j;
-
-    i = 0;
-    if (ft_strlen(base) < 2)
+    if (i < 2)
         return (0);
+    i = 0;
     while (base[i])
     {
-        if (ft_check_base(base[i]))
+        if (base[i] == '-' || base[i] == '+' || base[i] == '\f' ||
+                base[i] == '\t' || base[i] == ' ' || base[i] == '\n' ||
+                base[i] == '\r' || base[i] == '\v')
             return (0);
-        i++;
-    }
-    i = 0;
-    while (base[i])
-    {
         j = i + 1;
         while (base[j])
         {
@@ -61,38 +56,54 @@ int     ft_base_is_ok(char *base)
     return (1);
 }
 
-int     ft_atoi_base(char *str, char *base)
+int		skip_whitespace_minus(char *str, int *ptr_i)
 {
-    int i;
-	int result;
-	int sign;
+    int		minus_count;
+    int		i;
+    i = 0;
+    while (str[i] == '\f' || str[i] == '\t' || str[i] == ' ' ||
+            str[i] == '\n' || str[i] == '\r' || str[i] == '\v')
+        i++;
+    minus_count = 0;
+    while (str[i] && (str[i] == '+' || str[i] == '-'))
+    {
+        if (str[i] == '-')
+            minus_count++;
+        i++;
+    }
+    *ptr_i = i;
+    return (minus_count);
+}
 
-	i = 0;
-	sign = 1;
-	result = 0;
-	if (!ft_base_is_ok(base))
-		return (0);
-	while (ft_check_base(str[i]))
-		i++;
-	while (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	while (ft_base_position(base, str[i]) != -1)
-	{
-		result = ft_base_position(base, str[i]) + result * ft_strlen(base);
-		i++;
-	}
-	return (sign * result);
+int		ft_atoi_base(char *str, char *base)
+{
+    int		i;
+    int		sign;
+    int		result;
+    int		base_divider;
+
+    i = 0;
+    while (base[i])
+        i++;
+    base_divider = i;
+    result = 0;
+    sign = 1;
+    if (skip_whitespace_minus(str, &i) % 2)
+        sign = -1;
+    while (str[i] && ft_is_in_base(str[i], base))
+    {
+        result *= base_divider;
+        result += ft_get_int_from_base(str[i], base);
+        i++;
+    }
+    result *= sign;
+    return (result);
 }
 
 int main(void)
 {
-    char *str = "+++--++234890Hello my name is balou";
-    char *base = "0123456789ABCDEF";
-
+    char *str = "++-Basil";
+    char *base = "01";
     printf("%d\n", ft_atoi_base(str, base));
     return (0);
 }
