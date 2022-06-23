@@ -18,6 +18,7 @@ int     ft_check_base(char *base)
 
     if (ft_strlen(base) < 2)
         return (0);
+    i = 0;
     while (base[i])
     {
         if (base[i] == '+' || base[i] == '-')
