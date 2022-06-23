@@ -89,7 +89,7 @@ int		ft_atoi_base(char *str, char *base)
     result = 0;
     sign = 1;
     if (skip_whitespace_minus(str, &i) % 2)
-        sign = -1;
+        sign *= -1;
     while (str[i] && ft_is_in_base(str[i], base))
     {
         result *= base_divider;
@@ -102,7 +102,7 @@ int		ft_atoi_base(char *str, char *base)
 
 int main(void)
 {
-    char *str = "++-Basil";
+    char *str = "++---Basil";
     char *base = "01";
     printf("%d\n", ft_atoi_base(str, base));
     return (0);
