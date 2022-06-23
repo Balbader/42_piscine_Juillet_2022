@@ -7,33 +7,33 @@ void    ft_putchar(char c)
 
 void	ft_init_arr(int *tab, int n)
 {
-    int index;
+    int i;
 
-    index = 0;
-    while (index < n)
+    i = 0;
+    while (i < n)
     {
-        tab[index] = index;
-        index++;
+        tab[i] = i;
+        i++;
     }
 }
 
 void	ft_print_arr(int *tab, int n)
 {
-    int		index;
-    char	print;
+    int		i;
+    char    c;
 
-    index = 1;
-    while (index < n)
+    i = 1;
+    while (i < n)
     {
-        if (tab[index - 1] >= tab[index])
+        if (tab[i - 1] >= tab[i])
             return ;
-        index++;
+        i++;
     }
-    index = 0;
-    while (index < n)
+    i = 0;
+    while (i < n)
     {
-        print = tab[index++] + 48;
-        write(1, &print, 1);
+        c = tab[i++] + '0';
+        write(1, &c, 1);
     }
     if (tab[0] != (10 - n))
         write(1, ", ", 2);
@@ -44,10 +44,10 @@ void	ft_print_combn(int n)
     int tab[n];
     int i;
 
-    i = 0;
     if (n < 1 || n > 9)
         return ;
     ft_init_arr(tab, n);
+    i = 0;
     while (tab[0] <= 10 - n)
     {
         ft_print_arr(tab, n);
