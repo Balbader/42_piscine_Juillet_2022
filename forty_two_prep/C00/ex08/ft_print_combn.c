@@ -5,80 +5,65 @@ void    ft_putchar(char c)
     write(1, &c, 1);
 }
 
-int		tab_is_last(int n, int *tab)
+void	ft_init_arr(int *tab, int n)
 {
-    int i;
-    int diff;
+    int index;
 
-    if (tab[n - 1] == 9)
+    index = 0;
+    while (index < n)
     {
-        if (n == 1)
-            return (1);
-        i = 1;
-        while (i < n)
-        {
-            diff = tab[i] - tab[i - 1];
-            if (diff != 1)
-                return (0);
-            i++;
-        }
-        return (1);
+        tab[index] = index;
+        index++;
     }
-    return (0);
 }
 
-void	display_tab(int n, int *tab)
+void	ft_print_arr(int *tab, int n)
 {
-    char	value;
-    int		i;
+    int		index;
+    char	print;
 
-    i = 0;
-    while (i < n)
+    index = 1;
+    while (index < n)
     {
-        value = tab[i] + 48;
-        write(1, &value, 1);
-        i++;
+        if (tab[index - 1] >= tab[index])
+            return ;
+        index++;
     }
-    if (!tab_is_last(n, tab))
+    index = 0;
+    while (index < n)
+    {
+        print = tab[index++] + 48;
+        write(1, &print, 1);
+    }
+    if (tab[0] != (10 - n))
         write(1, ", ", 2);
-}
-
-int		tab_is_valid(int n, int *tab)
-{
-    int i;
-
-    i = 0;
-    while (i + 1 < n)
-    {
-        if (tab[i] >= tab[i + 1])
-            return (0);
-        i++;
-    }
-    display_tab(n, tab);
-    return (1);
 }
 
 void	ft_print_combn(int n)
 {
+    int tab[n];
     int i;
-    int	tab[9];
 
-    i = -1;
-    while (++i < n)
-        tab[i] = i;
-    while (!(tab_is_last(n, tab)))
+    i = 0;
+    if (n < 1 || n > 9)
+        return ;
+    ft_init_arr(tab, n);
+    while (tab[0] <= 10 - n)
     {
-        i = n - 1;
-        tab_is_valid(n, tab);
-        tab[i] += 1;
-        while (i > 0)
+        ft_print_arr(tab, n);
+        while (i < n)
         {
-            tab[i] == 10 ? tab[i - 1]++ : 0;
-            tab[i] == 10 ? tab[i] = tab[i - 1] - 1 : 0;
-            i--;
+            if (tab[i] >= 9 && n > 1)
+            {
+                tab[i] = 0;
+                tab[i - 1]++;
+            }
+            if (i == n - 1)
+                tab[i]++;
+            i++;
         }
+        i = 0;
     }
-    display_tab(n, tab);
 }
 
 int     main(void)
