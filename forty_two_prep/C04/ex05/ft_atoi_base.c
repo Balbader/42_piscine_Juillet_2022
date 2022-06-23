@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int     ft_strlen(char *str)
 {
     int     i;
@@ -84,4 +86,13 @@ int     ft_atoi_base(char *str, char *base)
 		i++;
 	}
 	return (sign * result);
+}
+
+int main(void)
+{
+    char *str = "+++--++234890Hello my name is balou";
+    char *base = "0123456789";
+
+    printf("%d\n", ft_atoi_base(str, base));
+    return (0);
 }
