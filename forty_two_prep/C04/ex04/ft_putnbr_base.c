@@ -73,7 +73,7 @@ int     main(void)
     int     nbr;
     char    base[] = "0123456789ABCDEF";
 
-    nbr = 3390;
+    nbr = 24;
     ft_putnbr_base(nbr, base);
 
     return (0);
