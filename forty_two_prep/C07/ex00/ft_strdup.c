@@ -27,13 +27,7 @@ char *ft_strcpy(char *dest, char *src)
 
 char *ft_strdup(char *str)
 {
-	char *duplicate;
-	int str_len;
-
-	str_len = ft_strlen(str);
-	duplicate = (char *)malloc(sizeof(char) * str_len);
-	ft_strcpy(duplicate, str);
-	return (duplicate);
+	char	*dup;
 }
 
 int main(void)
