@@ -6,7 +6,7 @@
 /*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 17:30:50 by baalbade          #+#    #+#             */
-/*   Updated: 2022/08/09 17:31:35 by baalbade         ###   ########.fr       */
+/*   Updated: 2022/08/09 17:35:19 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	ft_str_is_alpha(char *str)
 {
 	int	i;
 
+	if (str[i] == '\0')
+		return (1);
 	i = 0;
 	while (str[i])
 	{
