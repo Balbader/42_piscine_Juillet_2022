@@ -1,12 +1,22 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/09 13:25:14 by baalbade          #+#    #+#             */
+/*   Updated: 2022/08/09 13:26:56 by baalbade         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void    ft_ultiate_div_mod(int *a, int *b)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-    int     temp_a;
-    int     temp_b;
+	int	div;
+	int	mod;
 
-    temp_a = *a / *b;
-    temp_b = *a % *b;
-    *a = temp_a;
-    *b = temp_b;
+	div = *a / *b;
+	mod = *a % *b;
+	*a = div;
+	*b = mod;
 }
