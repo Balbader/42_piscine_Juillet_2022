@@ -1,12 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_reverse_alphabet.c                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/09 11:13:45 by baalbade          #+#    #+#             */
+/*   Updated: 2022/08/09 11:17:33 by baalbade         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void    ft_print_reverse_alphabet(void)
+void	ft_putchar(char c)
 {
-    write(1, "zyxwvutsrqponmlkjihgfedcba", 26);
+	write(1, &c, 1);
 }
 
-int     main(void)
+void	ft_print_reverse_alphabet(void)
 {
-    ft_print_reverse_alphabet();
-    return (0);
+	int	i;
+
+	i = 'z';
+	while (i >= 'a')
+	{
+		ft_putchar(i);
+		i--;
+	}
 }
