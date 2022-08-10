@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/10 08:24:56 by baalbade          #+#    #+#             */
-/*   Updated: 2022/08/10 08:34:57 by baalbade         ###   ########.fr       */
+/*   Created: 2022/08/10 09:08:23 by baalbade          #+#    #+#             */
+/*   Updated: 2022/08/10 09:08:27 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,13 @@ char	*ft_to_lower(char *str)
 		i++;
 	}
 	return (str);
+}
+
+int	ft_check_whitespace(char c)
+{
+	if (c <= 32)
+		return (1);
+	return (0);
 }
 
 /*
