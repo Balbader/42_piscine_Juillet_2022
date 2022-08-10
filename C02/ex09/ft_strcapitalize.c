@@ -6,8 +6,11 @@
 /*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 08:24:56 by baalbade          #+#    #+#             */
-/*   Updated: 2022/08/10 08:25:00 by baalbade         ###   ########.fr       */
+/*   Updated: 2022/08/10 08:28:39 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+char	*ft_strcapitalize(char *str)
+{
+	return (str);
+}
