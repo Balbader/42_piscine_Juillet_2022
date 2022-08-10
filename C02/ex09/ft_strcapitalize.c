@@ -5,12 +5,11 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/10 09:08:23 by baalbade          #+#    #+#             */
-/*   Updated: 2022/08/10 09:08:27 by baalbade         ###   ########.fr       */
+/*   Created: 2022/08/10 08:24:56 by baalbade          #+#    #+#             */
+/*   Updated: 2022/08/10 15:38:25 by baalbade         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* turn str to lowercase */
 char	*ft_to_lower(char *str)
 {
 	int	i;
@@ -25,27 +24,24 @@ char	*ft_to_lower(char *str)
 	return (str);
 }
 
-int	ft_check_whitespace(char c)
+int	ft_check_char(char c)
 {
-	if (c <= 32)
+	if (c <= 32 || c == '+' || c == '-')
 		return (1);
 	return (0);
 }
 
-/*
 char	*ft_strcapitalize(char *str)
 {
-	return (str);
-}
-*/
-
-#include <stdio.h>
-
-int	main(void)
-{
-	char	str[] = "            saLut, coMMent tu vAs ? 42Mots quarANTe-deux; cinquaNte+Et+uN         ";
+	int	i;
 
 	ft_to_lower(str);
-	printf("%s\n", str);
-	return (0);
+	i = 0;
+	while (str[i])
+	{
+		if ((ft_check_char(str[i])) && str[i + 1] >= 'a' && str[i + 1] <= 'z')
+			str[i + 1] -= 32;
+		i++;
+	}
+	return (str);
 }
