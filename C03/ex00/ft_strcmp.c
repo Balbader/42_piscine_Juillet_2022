@@ -1,6 +1,21 @@
-#include <string.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/10 16:39:52 by baalbade          #+#    #+#             */
+/*   Updated: 2022/08/10 18:41:43 by baalbade         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-int     ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-    return ((unsigned char)*s1 - (unsigned char)*s2);
+	int	i;
+
+	i = 0;
+	while (s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }
