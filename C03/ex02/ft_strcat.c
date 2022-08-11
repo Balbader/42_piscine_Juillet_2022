@@ -1,25 +1,30 @@
-int     ft_strlen(char *str)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/11 19:31:28 by baalbade          #+#    #+#             */
+/*   Updated: 2022/08/11 19:42:54 by baalbade         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char	*ft_strcat(char *dest, char *src)
 {
-    unsigned long     i;
+	unsigned int	i;
+	unsigned int	j;
 
-    i = 0;
-    while (str[i] != '\0')
-        i++;
-    return (i);
-}
-
-char    *ft_strcat(char *dest, char *src)
-{
-    unsigned int     i;
-    unsigned int     j;
-
-    j = ft_strlen(dest);
-    i = 0;
-    while (src[i])
-    {
-        dest[j] = src[i];
-        i++;
-    }
-    dest[j] = '\0';
-    return (dest);
+	i = 0;
+	j = 0;
+	while (dest[i])
+		i++;
+	while (src[j])
+	{
+		dest[i] = src[j];
+		j++;
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
