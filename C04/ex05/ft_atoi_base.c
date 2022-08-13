@@ -1,4 +1,14 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi_base.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/13 09:38:24 by baalbade          #+#    #+#             */
+/*   Updated: 2022/08/13 09:38:30 by baalbade         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 /* Check if every given char is in base */
 int     ft_compare_char_to_base(char c, char *base)
@@ -107,12 +117,4 @@ int     ft_atoi_base(char *str, char *base)
         i++;
     }
     return (res * sign);
-}
-
-int main(void)
-{
-    char *str = "++---Basil";
-    char *base = "0123456789ABCDEF";
-    printf("%d\n", ft_atoi_base(str, base));
-    return (0);
 }
