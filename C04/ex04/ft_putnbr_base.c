@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/13 09:37:19 by baalbade          #+#    #+#             */
+/*   Updated: 2022/08/13 09:37:23 by baalbade         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
-#include <stdio.h>
 
 int     ft_strlen(char *str)
 {
@@ -66,15 +77,4 @@ void    ft_putnbr_base(int nbr, char *base)
 	}
 	ft_putnbr_base(nbr / base_length, base);
 	ft_putnbr_base(nbr % base_length, base);
-}
-
-int     main(void)
-{
-    int     nbr;
-    char    base[] = "0123456789ABCDEF";
-
-    nbr = 24;
-    ft_putnbr_base(nbr, base);
-
-    return (0);
 }
