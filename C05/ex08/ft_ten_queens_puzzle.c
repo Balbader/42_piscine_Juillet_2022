@@ -1,4 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_ten_queens_puzzle.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: baalbade <baalbade@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/14 15:46:15 by baalbade          #+#    #+#             */
+/*   Updated: 2022/08/14 15:46:17 by baalbade         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
+
 #define SIZE 10
 
 void	ft_print_solution(int *tab)
@@ -16,7 +29,7 @@ void	ft_print_solution(int *tab)
     write(1, solution, SIZE + 1);
 }
 
-int		ft_abs(int nb)
+int ft_abs(int nb)
 {
     if (nb < 0)
         return (nb * -1);
@@ -24,7 +37,7 @@ int		ft_abs(int nb)
         return (nb);
 }
 
-int		ft_queen_position_is_ok(int i, int *tab)
+int ft_queen_position_is_ok(int i, int *tab)
 {
     int j;
 
@@ -57,7 +70,7 @@ void	ft_add_queens(int i, int *tab, int *count)
     }
 }
 
-int		ft_ten_queens_puzzle(void)
+int ft_ten_queens_puzzle(void)
 {
     int count;
     int	tab[SIZE];
