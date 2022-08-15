@@ -1,18 +1,24 @@
 NAME				=	libft.a
+
 CC					=	gcc
 CFLAGS				=	-Wall -Wextra -Werror
 IFLAGS 				=	-I$(INC_PATH)
+
 AR 					= 	ar
 ARFLAGS 			=	rcs
+
 RM					=	rm -rf
+
 INC_PATH 			=	 includes
 INC_NAME			=	ft.h
+
 SRC_PATH 			= 	srcs
 SRC_NAME 			=	ft_putchar.c \
 						ft_swap.c \
 						ft_putstr.c \
 						ft_strlen.c \
 						ft_strcmp.c
+
 INC 				=	$(addprefix $(INC_PATH)/, $(INC_NAME))
 SRC 				=	$(addprefix $(SRC_PATH)/, $(SRC_NAME))
 
