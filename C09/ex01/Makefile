@@ -9,7 +9,7 @@ ARFLAGS 			=	rcs
 
 RM					=	rm -rf
 
-INC_PATH 			=	 includes
+INC_PATH 			=	includes
 INC_NAME			=	ft.h
 
 SRC_PATH 			= 	srcs
